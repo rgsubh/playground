@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: tauhid621/hello-world-action@vmaster # workflow file can reside in same repo as actions for initial testing
+    - uses: tauhid621/hello-world-action@master # workflow file can reside in same repo as actions for initial testing
       with:
         who-to-greet: 'Yoda'
       id: hello

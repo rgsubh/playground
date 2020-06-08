@@ -1,0 +1,30 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      
+    # Set the target AKS cluster.
+    - uses: azure/k8s-set-context@v1
+    with:
+        method: kubeconfig
+        kubeconfig: ${{ secrets.MOANJUMCLUSTER_KUBE_CONFIG }}
+        context: moanjumCluster
+    id: setcontext
+        
+    # - uses: Azure/k8s-create-secret@v1
+    #   with:
+    #     container-registry-url: contoso.azurecr.io
+    #     container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
+    #     container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+    #     secret-name: demo-k8s-secret
+
+    - uses: Azure/k8s-deploy@v1
+      with:
+        manifests: |
+          manifests/deployment.yml
+          manifests/service.yml
+        images: |
+          moanjum/tutorial
