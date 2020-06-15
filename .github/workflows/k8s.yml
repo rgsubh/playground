@@ -18,4 +18,4 @@ jobs:
           manifests/service.yml
         images: |
           moanjum/tutorial
-        force: false
+        force: true
