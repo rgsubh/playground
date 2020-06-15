@@ -11,7 +11,7 @@ jobs:
       with:
         kubeconfig: ${{ secrets.MOANJUMCLUSTER_KUBE_CONFIG }}
 
-    - uses: tauhid621/k8s-deploy@users/moanjum/addingForceFlag
+    - uses: Azure/k8s-deploy@users/tauhid621/optionalForceFlagAdded
       with:
         manifests: |
           manifests/deployment.yml

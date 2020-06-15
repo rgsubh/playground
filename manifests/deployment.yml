@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: tutorialapp
-          image: moanjum/tutorial
+          image: karthequian/helloworld
           ports:
           - containerPort: 80
