@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       
-    # Set the target AKS cluster d.
+    # Set the target AKS cluster .
     - uses: Azure/k8s-set-context@v1
       with:
         kubeconfig: ${{ secrets.MOANJUMCLUSTER_KUBE_CONFIG }}
