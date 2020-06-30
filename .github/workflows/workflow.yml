@@ -9,3 +9,7 @@ jobs:
         who-to-greet: 'Yoda'
       id: hello
     - run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: Test file input
+      run: |
+        input = $(cat ./inputs.json)
+        echo input
