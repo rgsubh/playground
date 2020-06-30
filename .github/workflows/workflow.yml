@@ -12,6 +12,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test file input
       run: |
-        ls
-        #input=$(cat ./.github/workflows/inputs.json)
-        #echo $input
+        input=$(cat ./.github/workflows/inputs.json)
+        echo $input
