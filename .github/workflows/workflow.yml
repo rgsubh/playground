@@ -9,6 +9,7 @@ jobs:
         who-to-greet: 'Yoda'
       id: hello
     - run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - uses: actions/checkout@v2
     - name: Test file input
       run: |
         ls
