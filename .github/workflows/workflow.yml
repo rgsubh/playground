@@ -17,3 +17,4 @@ jobs:
         ls
         input=$(cat ./workflow/.github/workflows/inputs.json)
         echo $input
+        curl -X PUT -H "Authorization: Bearer ${{ secrets.RMDEVTOKEN }}" -H "Content-type: application/json" ${{ secrets.ConfigChangeUrl }} --data '$configInput'
