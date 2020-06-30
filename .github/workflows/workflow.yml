@@ -10,7 +10,10 @@ jobs:
       id: hello
     - run: echo "The time was ${{ steps.hello.outputs.time }}"
     - uses: actions/checkout@v2
+      with:
+        path: 'workflow'
     - name: Test file input
       run: |
-        input=$(cat ./.github/workflows/inputs.json)
+        ls
+        input=$(cat ./workflow/.github/workflows/inputs.json)
         echo $input
