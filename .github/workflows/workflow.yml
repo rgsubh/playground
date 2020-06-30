@@ -11,5 +11,6 @@ jobs:
     - run: echo "The time was ${{ steps.hello.outputs.time }}"
     - name: Test file input
       run: |
-        input=$(cat ./.github/workflows/inputs.json)
-        echo input
+        ls
+        #input=$(cat ./.github/workflows/inputs.json)
+        #echo $input
