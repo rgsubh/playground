@@ -1,1 +1,7 @@
-{ "properties" : { "requestTracingEnabled" : false, "httpLoggingEnabled": false, "detailedErrorLoggingEnabled": false}}
+{
+    "properties": {
+        "requestTracingEnabled": false,
+        "httpLoggingEnabled": false,
+        "detailedErrorLoggingEnabled": false
+    }
+}
