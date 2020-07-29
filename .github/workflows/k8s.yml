@@ -1,4 +1,9 @@
-on: [push]
+on:
+  push:
+    branches: 
+      - master
+    paths:
+      - .github/workflows/k8s.yml
 
 jobs:
   build:
