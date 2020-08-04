@@ -15,5 +15,5 @@ jobs:
           
       - run: |
           echo 'trying to get all notes form policy-sync'
-          git notes --ref policy-sync show
+          git ls-tree --name-only -r refs/notes/policy-sync
           echo 'tried man'
