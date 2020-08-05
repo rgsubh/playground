@@ -273,9 +273,58 @@ async function createCSV(data : any[]){
 
 }
 
+async function getPolicyFromAzure(id: string) {
+
+  let triggerScanUrl = `https://management.azure.com${id}?api-version=2019-10-01`;
+
+  const token = await getAccessToken();
+
+  let webRequest = new WebRequest();
+  webRequest.method = 'GET';
+  webRequest.uri = triggerScanUrl;
+  webRequest.headers = {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json; charset=utf-8'
+  }
+
+  printPartitionedText(`Gettings policy. URL: ${triggerScanUrl}`);
+
+
+  return sendRequest(webRequest).then((response: WebResponse) => {
+    console.log('Response status code: ', response.statusCode);
+    if (response.statusCode == StatusCodes.OK) {
+      // If scan is done, return empty poll url
+      return Promise.resolve(response);
+    }
+    else {
+      return Promise.reject(
+        `An error occured while fetching the batch result. StatusCode: ${
+          response.statusCode
+        }, Body: ${JSON.stringify(response.body)}`
+      );
+    }
+  }).catch(error => {
+    console.log('An error occured while getting policy id', error);
+    return Promise.reject(error);
+  });
+
+}
+
 async function run() {
 
   try {
+    const filePath = core.getInput('scopes');
+
+    const policyJson = fileHelper.getFileJson(filePath);
+    const policyId = policyJson['id'];
+
+    let policy = await getPolicyFromAzure(policyId);
+
+    console.log(JSON.stringify(policy.body))
+
+
+
+
     console.log("Action Ran")
 
   } catch (error) {
