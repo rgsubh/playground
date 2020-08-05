@@ -1,0 +1,26 @@
+{
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "properties": {
+        "displayName": "Web Application should only be accessible over HTTPS [Custom]",
+        "policyDefinitionId": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/providers/Microsoft.Authorization/policyDefinitions/e4ed8da0-be44-47ba-b654-78994a69a369",
+        "scope": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo",
+        "notScopes": [],
+        "parameters": {},
+        "description": "Assignment created by Tauhid for testing",
+        "metadata": {
+            "assignedBy": "Tauhid Anjum",
+            "parameterScopes": {},
+            "createdBy": "2f3b4875-d3f3-4e09-81d8-d576f88bc275",
+            "createdOn": "2020-08-04T09:35:26.895442Z",
+            "updatedBy": null,
+            "updatedOn": null
+        },
+        "enforcementMode": "Default"
+    },
+    "id": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo/providers/Microsoft.Authorization/policyAssignments/36b26a54fc444a059eddff57",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "36b26a54fc444a059eddff57"
+}

@@ -1,0 +1,23 @@
+{
+    "policyRule": {
+        "if": {
+            "allOf": [
+                {
+                    "field": "type",
+                    "equals": "Microsoft.Web/sites"
+                },
+                {
+                    "field": "kind",
+                    "like": "app*"
+                },
+                {
+                    "field": "Microsoft.Web/sites/httpsOnly",
+                    "equals": "false"
+                }
+            ]
+        },
+        "then": {
+            "effect": "[parameters('effect')]"
+        }
+    }
+}

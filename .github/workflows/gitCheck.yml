@@ -18,11 +18,16 @@ jobs:
         uses: azure/login@v1.1
         with:
          creds: ${{secrets.AZ_SPN_CREDS}}
+      
+      - name: Check out default repository
+        uses: actions/checkout@v2
+        with:
+          path: workflow
           
       - name: Check resource compliance
         uses: ./
         with:
           scopes: |
-            /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-dev/providers/Microsoft.Web/sites/azpactestwebapp
+            ./workflow/policyFolder/WebOverHTTPS/policy.json
           bearer-token: 'awd'
           poll-timeout: '20'
