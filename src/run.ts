@@ -275,7 +275,7 @@ async function createCSV(data : any[]){
 
 async function getPolicyFromAzure(id: string) {
 
-  let triggerScanUrl = `https://management.azure.com${id}?api-version=2019-10-01`;
+  let triggerScanUrl = `https://management.azure.com${id}?api-version=2019-09-01`;
 
   const token = await getAccessToken();
 
