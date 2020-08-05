@@ -314,7 +314,11 @@ async function getPolicyFromAzure(id: string) {
 async function run() {
 
   console.log("started");
-  let hash = require('child_process').execSync('git hash-object action.yml').toString();
+
+  let list = require('child_process').execSync('ls').toString().trim();
+  console.log("list : " + list);
+
+  let hash = require('child_process').execSync('git hash-object action.yml').toString().trim();
   console.log("hash : " + hash);
 
   console.log("tried");
