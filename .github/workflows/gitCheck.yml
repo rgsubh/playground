@@ -11,9 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          ref: testAction
           
-      - run: |
-          echo 'trying to get all notes form policy-sync'
-          git ls-tree --name-only -r refs/notes/policy-sync
-          echo 'tried man'
+      - name: Check resource compliance
+        uses: ./
+        with:
+          scopes: |
+            /subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-dev/providers/Microsoft.Web/sites/azpactestwebapp
+          bearer-token: 'awd'
+          poll-timeout: 20
