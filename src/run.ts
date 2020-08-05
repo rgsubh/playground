@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import * as fileHelper from './fileHelper';
 import * as table from 'table';
 import {dirname} from 'path'
+import * as exec from '@actions/exec';
 
 
 const KEY_RESOURCE_ID = "resourceId";
@@ -312,24 +313,29 @@ async function getPolicyFromAzure(id: string) {
 
 async function run() {
 
-  try {
-    const filePath = core.getInput('scopes');
+  console.log("started");
+  let hash = require('child_process').execSync('git hash-object action.yml').toString();
+  console.log("hash : " + hash);
 
-    const policyJson = fileHelper.getFileJson(filePath);
-    const policyId = policyJson['id'];
+  console.log("tried");
+  // try {
+  //   const filePath = core.getInput('scopes');
 
-    let policy = await getPolicyFromAzure(policyId);
+  //   const policyJson = fileHelper.getFileJson(filePath);
+  //   const policyId = policyJson['id'];
 
-    console.log(JSON.stringify(policy.body))
+  //   let policy = await getPolicyFromAzure(policyId);
+
+  //   console.log(JSON.stringify(policy.body))
 
 
 
 
-    console.log("Action Ran")
+  //   console.log("Action Ran")
 
-  } catch (error) {
-    core.setFailed(error.message);
-  }
+  // } catch (error) {
+  //   core.setFailed(error.message);
+  // }
 
 
 
