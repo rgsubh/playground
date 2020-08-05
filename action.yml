@@ -1,0 +1,16 @@
+name: 'AzPac'
+description: 'Azure policy as code action'
+inputs: 
+  scopes: # id of input
+    description: 'Scopes to perform scanning on'
+    required: true
+  bearer-token:
+    description: 'Bearer token to call policy REST APIs'
+    required: true
+  poll-timeout:
+    description: 'Timeout duration for polling in minutes'
+    required: false
+    default: '20'
+runs:
+  using: 'node12'
+  main: 'lib/run.js'
