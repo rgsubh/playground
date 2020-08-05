@@ -29,5 +29,5 @@ jobs:
         with:
           scopes: |
             ./workflow/policyFolder/WebOverHTTPS/policy.json
-          bearer-token: 'awwdddd'
+          bearer-token: 'awwdddddd'
           poll-timeout: '20'
