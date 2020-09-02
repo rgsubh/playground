@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: 
+      - master
+    paths:
+      - .github/workflows/manageAzurepolicy.yml
+
+jobs:
+  apply-azure-policy:    
+    runs-on: ubuntu-latest
+    steps:
+    # Azure Login       
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZ_SPN_CREDS}}
+
+    - name: Checkout
+      uses: actions/checkout@v2 
+
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:      
+        paths:  |                  
+          policyFolder/**  # path to directory where policy files were downloaded in runner
