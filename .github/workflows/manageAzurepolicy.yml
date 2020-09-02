@@ -22,4 +22,4 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:      
         paths:  |                  
-          policyFolder/**  # path to directory where policy files were downloaded in runner
+          policyFolder/**
