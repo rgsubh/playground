@@ -18,7 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2 
 
-    - name: Create or Update Azure Policies
+    - name: Create or Update Azure Policiess
       uses: azure/manage-azure-policy@v0
       with:      
         paths:  |                  
