@@ -1,0 +1,48 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Allowed resource locations for Development Environment",
+  "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+  "scope": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/ignite-demo-dev",
+  "notScopes": [],
+  "parameters": {
+   "listOfAllowedLocations": {
+    "value": [
+     "centralusstage",
+     "eastusstage",
+     "eastus2",
+     "eastus2stage",
+     "northcentralusstage",
+     "southcentralusstage",
+     "westusstage",
+     "westus2",
+     "westus2stage",
+     "eastus",
+     "northcentralus",
+     "southcentralus",
+     "westcentralus",
+     "westus",
+     "centralus"
+    ]
+   }
+  },
+  "description": "",
+  "metadata": {
+   "assignedBy": "Md Raiyan Alam",
+   "parameterScopes": {
+    "listOfAllowedLocations": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/ignite-demo-dev"
+   },
+   "createdBy": "0845db2a-7e64-419d-b9f4-aecf1b46b39a",
+   "createdOn": "2020-09-02T06:56:10.4571979Z",
+   "updatedBy": "0845db2a-7e64-419d-b9f4-aecf1b46b39a",
+   "updatedOn": "2020-09-02T07:11:38.5803764Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/afc11291-9826-46be-b852-70349146ddf8/resourceGroups/ignite-demo-dev/providers/Microsoft.Authorization/policyAssignments/96c8213df0cc4883974623cf",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "96c8213df0cc4883974623cf"
+}
