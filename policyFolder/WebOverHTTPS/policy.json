@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Web Application should only be accessible over HTTPS [Custom]vnnssss",
+        "displayName": "Web Application should only be accessible over HTTPS [Custom]vnnsssss",
         "policyType": "Custom",
         "mode": "All",
         "description": "Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks.",

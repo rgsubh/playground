@@ -4,7 +4,7 @@
         "tier": "Free"
     },
     "properties": {
-        "displayName": "Web Application should only be accessible over HTTPS [Custom]ssss",
+        "displayName": "Web Application should only be accessible over HTTPS [Custom]sssss",
         "policyDefinitionId": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/providers/Microsoft.Authorization/policyDefinitions/e4ed8da0-be44-47ba-b654-78994a69a369",
         "scope": "/subscriptions/c00d16c7-6c1f-4c03-9be1-6934a4c49682/resourceGroups/az-pac-demo",
         "notScopes": [],
